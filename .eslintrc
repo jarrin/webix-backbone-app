@@ -1,0 +1,17 @@
+{
+  "extends": "standard",
+  "globals": {
+    "webix": true,
+    "define": true
+  },
+  "env": {
+    "browser": true
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack/base.conf.js"
+      }
+    }
+  }
+}

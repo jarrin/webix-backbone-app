@@ -8,21 +8,43 @@ export default Backbone.WebixView.extend({
   name: 'login',
   config: {
     view: 'window',
+    id: 'login_window',
     position: 'center',
     hidden: false,
     head: 'Inloggen A.U.B',
     body: {
       view: 'form',
-      id: 'log_form',
+      id: 'login_form',
       width: 400,
       elements: [
-        {view: 'text', label: 'Gebruiker', name: 'email', labelWidth: 100, id: 'focus_me'},
-        {view: 'text', type: 'password', label: 'Wachtwoord', name: 'password', labelWidth: 100},
+        {
+          view: 'text',
+          label: 'Gebruiker',
+          id: 'username',
+          name: 'username',
+          labelWidth: 100
+        },
+        {
+          view: 'text',
+          type: 'password',
+          label: 'Wachtwoord',
+          name: 'password',
+          labelWidth: 100
+        },
         {
           margin: 5,
           cols: [
             {width: 50},
-            {view: 'button', value: 'Login', type: 'form'},
+            {
+              view: 'button',
+              value: 'Login',
+              type: 'form',
+              on: {
+                onItemClick () {
+                  webix.$$('login_window').controller.doLogin.call(this, arguments)
+                }
+              }
+            },
             {width: 50}
           ]
         }

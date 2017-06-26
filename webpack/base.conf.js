@@ -47,8 +47,8 @@ export default {
   },
   resolve: {
     alias: {
-      setup: 'Setup/Production',
-      underscore: 'lodash/lodash'
+      setup: 'Setup/Production'
+      // underscore: 'lodash/lodash'
     },
     modules: [
       'node_modules',

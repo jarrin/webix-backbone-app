@@ -3,7 +3,7 @@
  */
 
 import $ from 'jquery'
-import _ from 'lodash'
+import _ from 'underscore'
 import Backbone from 'backbone'
 window.$ = $
 export default class MainController {
@@ -54,13 +54,12 @@ export default class MainController {
       this.routable_controllers[path].activate()
       this.active_controller = this.routable_controllers[path]
       if (this.active_controller.in_menu) webix.$$('main_menu').select(this.routable_controllers[path].name)
-
       if (this.active_controller.show_toolbar) {
-        webix.$$('sidebar_toggle').hide()
-        $(webix.$$('app_title').$view).addClass('padding_left')
-      } else {
         webix.$$('sidebar_toggle').show()
         $(webix.$$('app_title').$view).removeClass('padding_left')
+      } else {
+        webix.$$('sidebar_toggle').hide()
+        $(webix.$$('app_title').$view).addClass('padding_left')
       }
       this.active_controller.show_sidebar ? webix.$$('main_menu').show() : webix.$$('main_menu').hide()
 

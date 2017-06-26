@@ -5,5 +5,5 @@ webix.debug = false
 webix.debug_render = false
 window.app = {
   debug: false,
-  backend: 'http://localhost/bymaxx/ajax/'
+  backend: 'http://localhost/webix_backend/web/api/v1/'
 }

@@ -3,7 +3,7 @@
  */
 import Backbone from 'backbone'
 import $ from 'jquery'
-import _ from 'lodash'
+import _ from 'underscore'
 
 let cfg = {
   use_id: false

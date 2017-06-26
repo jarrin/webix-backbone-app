@@ -15,7 +15,7 @@ export default Backbone.WebixView.extend({
         fillspace: true
       }
     ],
-    data: [{test: 'Success!'}]
+    url: window.app.backend + 'books/'
   },
   initialize () {
     // Call parent

@@ -12,6 +12,7 @@ export default Backbone.Router.extend({
   defaultRoute () {
     console.log('triggering default route')
     this.navigate('home', {trigger: true})
+    window.app.mainController.trigger('change', 'home')
   },
   invokeModule (module, route) {
     console.log('invoke ' + module)

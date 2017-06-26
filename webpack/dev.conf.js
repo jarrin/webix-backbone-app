@@ -12,5 +12,8 @@ export default {
       setup: 'Setup/Development'
 
     }
+  },
+  devServer: {
+    public: 'localhost:8080'
   }
 }

@@ -3,6 +3,7 @@
  */
 import Backbone from 'backbone'
 import 'Setup/App'
+import _ from 'underscore'
 
 export default Backbone.WebixView.extend({
   el: '#app',
@@ -31,7 +32,13 @@ export default Backbone.WebixView.extend({
             view: 'template',
             css: 'app-title',
             id: 'app_title',
-            template: '#title#'
+            template: '#title#',
+            autowidth: true
+          },
+          {
+            id: 'toolbar_content',
+            view: 'template',
+            css: 'toolbar-content'
           }
         ]
       },
@@ -57,5 +64,13 @@ export default Backbone.WebixView.extend({
   initialize () {
     // Call parent
     Backbone.WebixView.prototype.initialize.apply(this, arguments)
+    if (window.app) {
+      window.app.on('error', (options) => {
+        options = _.extend({
+          type: 'error'
+        }, options)
+        window.webix.message(options)
+      })
+    }
   }
 })

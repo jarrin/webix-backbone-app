@@ -31,7 +31,6 @@ export default class Base {
     }.bind(this)
 
     window.app.mainController.addToMenu = function (options) {
-      console.log('add', options)
       this.menu_collection.add(new MenuModel(options))
     }.bind(this)
 
